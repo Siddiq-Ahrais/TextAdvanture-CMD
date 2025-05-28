@@ -4,5 +4,5 @@
 /**
  * 
  */
-module TextAdvantureGame {
+module helloword {
 }
