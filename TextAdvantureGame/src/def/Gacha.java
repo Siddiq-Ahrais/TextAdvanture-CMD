@@ -17,7 +17,7 @@ public void playerSetup() {
 	
 	}
 
-    public static void collectHerb() {
+    public static String collectHerb() {
         double chance = Math.random(); // 0.0 - 1.0
         String hasil; // selalu didapat
 
@@ -37,11 +37,23 @@ public void playerSetup() {
         System.out.println("You get " + hasil);
         System.out.println("\n-----------------------------");
         System.out.println("=============================");
-       
         
+        return hasil;
+    }
+    
+    public static int getHerbHealingValue(String herbType) {
+        if (herbType.equals("Absolute Nature Glass")) {
+            return 20;
+        } else if (herbType.equals("Nature Glass High-Grade")) {
+            return 15;
+        } else if (herbType.equals("Nature Glass Middle-Grade")) {
+            return 10;
+        } else {
+            return 5;
+        }
     }
 
-    public static void observe() {
+    public static String observe() {
     	
         System.out.println("----------------------------");
         System.out.println("====== Observe Result ======");
@@ -61,15 +73,18 @@ public void playerSetup() {
             
             System.out.println("=============================");
         }
+        return playerWeapon;
     }
-    public static void rest() {
+    public static int rest() {
         System.out.println("---------------------------");
         System.out.println("======= Rest Result =======");
         System.out.println("---------------------------");
         System.out.println("--  You feel Refreshed  --");
+        int restHeal = 5;
+        System.out.println("You recovered " + restHeal + " HP!");
         System.out.println("\n-------------------------");
         System.out.println("===========================");
-        
-        }
+        return restHeal;
+    }
     
 }
